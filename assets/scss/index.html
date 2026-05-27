@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mark Edison | Multi-Disciplinary Creative</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&amp;family=Hanken+Grotesk:wght@400;500&amp;family=Space+Mono:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(26, 26, 26, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .neon-glow:hover {
+            box-shadow: 0 0 20px rgba(0, 219, 231, 0.3);
+        }
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            overflow-x: hidden;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0e0e0e;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #353534;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00dbe7;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#b8c3ff",
+                        "on-tertiary-fixed": "#002022",
+                        "inverse-primary": "#124af0",
+                        "on-background": "#e5e2e1",
+                        "background": "#131313",
+                        "on-tertiary-container": "#c0faff",
+                        "inverse-surface": "#e5e2e1",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-tertiary-fixed-variant": "#004f54",
+                        "on-tertiary": "#00363a",
+                        "on-primary-container": "#efefff",
+                        "error-container": "#93000a",
+                        "primary": "#b8c3ff",
+                        "outline-variant": "#434656",
+                        "on-primary": "#002388",
+                        "surface-dim": "#131313",
+                        "on-secondary-fixed-variant": "#6900b3",
+                        "surface-container-low": "#1c1b1b",
+                        "inverse-on-surface": "#313030",
+                        "surface-container-highest": "#353534",
+                        "on-secondary": "#490080",
+                        "surface": "#131313",
+                        "tertiary": "#00dbe7",
+                        "tertiary-fixed-dim": "#00dbe7",
+                        "secondary-fixed": "#f0dbff",
+                        "on-error-container": "#ffdad6",
+                        "surface-bright": "#3a3939",
+                        "secondary-fixed-dim": "#ddb7ff",
+                        "surface-container": "#201f1f",
+                        "secondary-container": "#6f00be",
+                        "primary-container": "#2e5bff",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed-variant": "#0035be",
+                        "tertiary-fixed": "#74f5ff",
+                        "surface-tint": "#b8c3ff",
+                        "tertiary-container": "#007980",
+                        "primary-fixed": "#dde1ff",
+                        "on-secondary-fixed": "#2c0051",
+                        "on-surface-variant": "#c4c5d9",
+                        "on-secondary-container": "#d6a9ff",
+                        "on-primary-fixed": "#001356",
+                        "secondary": "#ddb7ff",
+                        "outline": "#8e90a2",
+                        "on-error": "#690005",
+                        "surface-variant": "#353534",
+                        "surface-container-high": "#2a2a2a",
+                        "on-surface": "#e5e2e1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-sm": "8px",
+                        "container-max": "1440px",
+                        "stack-md": "16px",
+                        "stack-lg": "32px",
+                        "section-gap": "160px",
+                        "margin-mobile": "24px",
+                        "gutter": "32px",
+                        "margin-desktop": "80px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Sora"],
+                        "display-lg": ["Sora"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "headline-lg": ["Sora"],
+                        "label-caps": ["Space Mono"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-md": ["Sora"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "display-lg": ["80px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                        "body-lg": ["20px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface">
+<!-- TopAppBar -->
+<header class="bg-surface/80 backdrop-blur-xl docked full-width top-0 sticky z-50 border-b border-white/10 flex justify-between items-center w-full px-6 md:px-margin-desktop py-4">
+<div class="flex items-center gap-4">
+<img alt="Mark Edison Monogram" class="w-10 h-10 invert" src="https://lh3.googleusercontent.com/aida/ADBb0uiAuqHcd7EO7_f6_vI7F-cf1Cson_UtMwTLNaGo6mcps5-MpesbUwBcgMfmlsPJGrQ-cz7RfNS1Fc0dPx-WVzaCZwrTe-J84mSOnQdrP8NEYO8xdGuriS_1MeQIE_5Ka0FzaokvTTnOr9cXMrQE2pBjCdDDEggrsf4k_eBxVY-hvJQQ0upFdaWHlFhCxc25C-YVOWK7QJBizBTtkLoHSA4OIptpOj3LMG1LJLcBwgChIHhrdLR5LZtRuwg"/>
+<span class="font-headline-md text-[24px] md:text-headline-md font-bold tracking-tighter text-on-surface">MARK EDISON BERDIN</span>
+</div>
+<nav class="hidden md:flex items-center gap-10">
+<a class="font-label-caps text-label-caps text-tertiary font-bold hover:text-tertiary transition-colors duration-300" href="#home">Home</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary transition-colors duration-300" href="#about">About</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary transition-colors duration-300" href="#sample-works">Sample Works</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary transition-colors duration-300" href="#contact">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<a class="material-symbols-outlined text-primary hover:text-tertiary transition-colors" href="mailto:berdinmarkedison@gmail.com">mail</a>
+<button class="md:hidden material-symbols-outlined text-primary">menu</button>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<!-- Hero Section -->
+<section class="min-h-[80vh] flex flex-col justify-center items-start pt-stack-lg gap-stack-lg relative" id="home">
+<div class="absolute -top-40 -right-20 w-96 h-96 bg-tertiary/10 rounded-full blur-[120px] pointer-events-none"></div>
+<span class="font-label-caps text-label-caps text-tertiary tracking-[0.2em]">AVAILABLE FOR FREELANCE</span>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg max-w-4xl">
+                MULTI-DISCIPLINARY <span class="text-tertiary">CREATIVE</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+                Specializing in high-end <span class="text-on-surface font-semibold">Graphic Design</span>, cinematic <span class="text-on-surface font-semibold">Video Production</span>, and precision <span class="text-on-surface font-semibold">3D &amp; CAD Modeling</span>. Crafting visual identities that command attention.
+            </p>
+<div class="flex flex-col sm:flex-row gap-stack-md mt-4">
+<button class="bg-tertiary text-on-tertiary-fixed font-bold font-headline-md text-body-md px-10 py-5 rounded-lg flex items-center gap-2 transition-transform active:scale-95 hover:shadow-[0_0_25px_rgba(0,219,231,0.4)]" a href="resume.pdf">
+                    View Résumé
+                    <span class="material-symbols-outlined">play_arrow</span>
+</button>
+<button class="border border-tertiary/30 text-tertiary font-bold font-headline-md text-body-md px-10 py-5 rounded-lg transition-all hover:bg-tertiary/5 active:scale-95">
+                    Latest Projects
+                </button>
+</div>
+</section>
+<!-- Services Grid -->
+<section class="mt-section-gap" id="about">
+<div class="flex flex-col md:flex-row justify-between items-end mb-stack-lg gap-stack-md">
+<div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg">Expertise</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Strategic creative solutions across multiple mediums.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Service 1 -->
+<div class="glass-card p-stack-lg group hover:border-tertiary/50 transition-all duration-500">
+<span class="material-symbols-outlined text-tertiary text-4xl mb-4 group-hover:scale-110 transition-transform">dashboard</span>
+<h3 class="font-headline-md text-headline-md mb-2">Marketing Layouts</h3>
+<p class="font-body-md text-on-surface-variant">Editorial and advertising structures that balance aesthetics with high conversion metrics.</p>
+</div>
+<!-- Service 2 -->
+<div class="glass-card p-stack-lg group hover:border-tertiary/50 transition-all duration-500">
+<span class="material-symbols-outlined text-tertiary text-4xl mb-4 group-hover:scale-110 transition-transform">apparel</span>
+<h3 class="font-headline-md text-headline-md mb-2">Merchandise Design</h3>
+<p class="font-body-md text-on-surface-variant">Premium apparel and physical brand collateral focused on textile innovation and detail.</p>
+</div>
+<!-- Service 3 -->
+<div class="glass-card p-stack-lg group hover:border-tertiary/50 transition-all duration-500">
+<span class="material-symbols-outlined text-tertiary text-4xl mb-4 group-hover:scale-110 transition-transform">movie_edit</span>
+<h3 class="font-headline-md text-headline-md mb-2">Video Production</h3>
+<p class="font-body-md text-on-surface-variant">Cinematic storytelling, from commercial reels to atmospheric book trailers and promos.</p>
+</div>
+<!-- Service 4 -->
+<div class="glass-card p-stack-lg group hover:border-tertiary/50 transition-all duration-500">
+<span class="material-symbols-outlined text-tertiary text-4xl mb-4 group-hover:scale-110 transition-transform">draw</span>
+<h3 class="font-headline-md text-headline-md mb-2">Digital Art &amp; Logo</h3>
+<p class="font-body-md text-on-surface-variant">Bespoke identity systems and illustrative assets that define a brand's unique visual DNA.</p>
+</div>
+<!-- Service 5 -->
+<div class="glass-card p-stack-lg group hover:border-tertiary/50 transition-all duration-500 md:col-span-2">
+<span class="material-symbols-outlined text-tertiary text-4xl mb-4 group-hover:scale-110 transition-transform">view_in_ar</span>
+<h3 class="font-headline-md text-headline-md mb-2">3D &amp; CAD Modeling</h3>
+<p class="font-body-md text-on-surface-variant">Technically precise 3D environments and product CAD visualizations for architectural and manufacturing applications.</p>
+</div>
+</div>
+</section>
+<!-- Expanded Work Samples -->
+<section class="mt-section-gap" id="sample-works">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-stack-lg">Featured Work</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Project 1 -->
+<div class="relative overflow-hidden group rounded-xl aspect-[4/5]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A cinematic, high-contrast poster titled Neon Genesis featuring aggressive neon cyan typography and deep black shadows. The composition is sleek and modern, with abstract light trails and digital distortion effects that evoke a sense of futuristic technology and rapid movement. The lighting is moody and sharp, emphasizing the metallic textures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjapS2361ysL0cYwook-CsqLJKOzW81-tLBdEl3TZgbOKkaY3TrnSmKD6aJzl_JR10ZantoN-VSQ2q1kgbMIFN-zjXZeeWrVu57bYcXyTwk1w-wTaXYX941NYMF7Irw5uivZCl34cyDQVAHWDEn8MaiESFQrlJwgqYZsTU6u4Ibn5n8LWvJicOpZiMcbQiydo8azQr2FCbvfDr3Gah06j0C4miVodwcwLIvXSpmYg60bTsEh33-664aQb2nye4SPOTvg6jHkgPTjwT"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent flex flex-col justify-end p-10 translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2 h-2 rounded-full bg-tertiary shadow-[0_0_8px_#00dbe7]"></span>
+<span class="font-label-caps text-label-caps text-tertiary">GRAPHIC DESIGN</span>
+</div>
+<h3 class="font-headline-md text-headline-md">Neon Genesis Poster</h3>
+<p class="font-body-md text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-500 mt-2">Experimental digital collage exploring cybernetic themes and brutalist layout.</p>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="relative overflow-hidden group rounded-xl aspect-[4/5]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A high-end 3D render of a liquid metal study where iridescent chrome fluid flows and twists in a zero-gravity environment. The surface is incredibly reflective, catching high-key cyan and white highlights against a pitch-black void. The aesthetic is ultra-modern and technical, showcasing smooth procedural geometry and sophisticated shader work." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDauhBiNcji1izDzaANsmiMfyWb_NKte2hQkpy3rPf96vaDnsYrfM_zupBQuI500onwpKoeDG_DHzfULgE58Op_ovHbB-ekqt4ObwWaTA0pXRZ8zZDW_KRvKBOMYlXz58aodklxHzAJFd_iRLWQ7EFQNYelURYPpdCWthznEuuEn4yabRHDJ9cPz_eEm9MyMcWxhL8JX0nSjLN4sMXVWdEn3t4pF9E76G_N4Cabk6_XfXb77k9gfdWWr2OZAgvXKaGgn0BfntAlrLC2"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent flex flex-col justify-end p-10 translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_#b8c3ff]"></span>
+<span class="font-label-caps text-label-caps text-primary">3D MODELING</span>
+</div>
+<h3 class="font-headline-md text-headline-md">Liquid Metal Study</h3>
+<p class="font-body-md text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-500 mt-2">Abstract exploration of chrome surfaces and fluid dynamics in digital space.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Video Showcase -->
+<section class="mt-section-gap">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-stack-lg text-center">Cinematic Reel</h2>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter">
+<!-- Video 1 -->
+<div class="group cursor-pointer">
+<div class="relative rounded-xl overflow-hidden aspect-video border border-white/10 mb-stack-md inner-shadow">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A dramatic still from a commercial film reel showing a modern urban environment at dusk with vibrant neon lights reflecting on wet pavement. The mood is high-energy and professional, with a focus on cinematic lighting and color grading that features deep blues and electric cyans. A transparent play button overlay is centered in the frame." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtvSZr91MX6629_xgh5d0aL0BELDn8zUu6DocicQpxjtptUhfgiQPc4sPzepYOzqDAEXTEeTiN5Ha0jiX8r9mKigwSRu7L6yfvB4akwx7KfGmjxAWy6Hn4jT9QSB_O-dhub0yAlFqZKtJ69fKCHwFs444RZEc8D--tEG7M4i6e2uPwIxpaXAWJxZlVKPyxi15tutUk56N8IIOA_DdmbS-WEb2rSZZC8sitMRQadpDBTyQEKFQZ4OGF5Vv3Wys5QxhPwEI92b7QbjQg"/>
+<div class="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/10 transition-colors">
+<div class="w-20 h-20 rounded-full border border-tertiary flex items-center justify-center bg-background/50 backdrop-blur-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-tertiary text-4xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+</div>
+<div class="flex justify-between items-center">
+<div>
+<h4 class="font-headline-md text-[20px] md:text-[24px]">Commercial Reel 2024</h4>
+<span class="font-label-caps text-[10px] text-on-surface-variant">DIRECTION • EDITING</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">02:45</span>
+</div>
+</div>
+<!-- Video 2 -->
+<div class="group cursor-pointer">
+<div class="relative rounded-xl overflow-hidden aspect-video border border-white/10 mb-stack-md inner-shadow">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A moody, noir-inspired book trailer still featuring a close-up of a typewriter on a wooden desk illuminated by a single harsh desk lamp. The shadows are deep and long, creating a classic mystery atmosphere. The color palette is muted, emphasizing textures and high-contrast black-and-white tones with a subtle cyan tint in the shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDs3GxLD4QYE-Iq6NJp8U_pHp-ctCLGf5A1mIPsFl8VQ_a55Ed3HY_0QNpKlb1cUAwGWlzyfvtM2-zBeuk3PfRSrXFKwaTj-454HYdRA-nmLy5pkHe0BBwDMCsiVLwRPoPveqSnquCN_86bjTTiHizg0q482lJYP-yRfREcQbhhAhdwrsJ0hgxbhIvm-Mhfvm31eECXXj5Yi6-liz1-BGhJr_SqwlCPoiJVWxpeNQ2_BiWgw2h0DW6_rJzC4oWwRS6ahSgszb5oGcns"/>
+<div class="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/10 transition-colors">
+<div class="w-20 h-20 rounded-full border border-tertiary flex items-center justify-center bg-background/50 backdrop-blur-md group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-tertiary text-4xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+</div>
+<div class="flex justify-between items-center">
+<div>
+<h4 class="font-headline-md text-[20px] md:text-[24px]">Noir Book Trailer</h4>
+<span class="font-label-caps text-[10px] text-on-surface-variant">NARRATIVE • LIGHTING</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">01:12</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Form -->
+<section class="mt-section-gap mb-section-gap max-w-3xl mx-auto text-center" id="contact">
+<h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg mb-4">Let's Connect.</h2>
+<p class="font-body-lg text-on-surface-variant mb-stack-lg">Have a vision? Let’s bring it to life with precision and style.</p>
+<form class="text-left space-y-stack-lg" onsubmit="event.preventDefault();">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-lg">
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant">NAME</label>
+<input class="bg-transparent border-0 border-b border-white/20 focus:ring-0 focus:border-tertiary transition-colors py-2 text-body-md text-on-surface" placeholder="Your full name" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant">EMAIL</label>
+<input class="bg-transparent border-0 border-b border-white/20 focus:ring-0 focus:border-tertiary transition-colors py-2 text-body-md text-on-surface" placeholder="your@email.com" type="email"/>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant">Subject</label>
+<input class="bg-transparent border-0 border-b border-white/20 focus:ring-0 focus:border-tertiary transition-colors py-2 text-body-md text-on-surface" placeholder="Project Inquiry, Collaboration, etc." type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant">MESSAGE</label>
+<textarea class="bg-transparent border-0 border-b border-white/20 focus:ring-0 focus:border-tertiary transition-colors py-2 text-body-md text-on-surface resize-none" placeholder="Tell me about your project..." rows="4"></textarea>
+</div>
+<div class="pt-stack-md flex justify-center">
+<button class="bg-tertiary text-on-tertiary-fixed font-bold font-headline-md text-body-md px-12 py-5 rounded-lg transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(0,219,231,0.5)] active:scale-95">
+                        Start a Project
+                    </button>
+</div>
+</form>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-white/10 flex flex-col items-center gap-stack-md w-full px-margin-mobile py-stack-lg mb-[80px] md:mb-0">
+<div class="flex flex-col items-center gap-4">
+<span class="font-headline-md text-on-surface font-extrabold tracking-tighter">ME.</span>
+<div class="flex gap-stack-lg">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary underline decoration-tertiary/50 transition-all" href="https://www.facebook.com/markedisonberdin/">Facebook</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary underline decoration-tertiary/50 transition-all" href="https://www.instagram.com/krissscalpel/">Instagram</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-tertiary underline decoration-tertiary/50 transition-all" href="https://www.linkedin.com/in/berdinmarkedison/">LinkedIn</a>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant opacity-50 mt-4">© 2026 MARK EDISON BERDIN. ALL RIGHTS RESERVED.</p>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<div class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-3 pb-safe bg-surface-container/90 backdrop-blur-lg z-50 border-t border-white/5 shadow-[0_-4px_20px_rgba(0,219,231,0.1)]">
+<div class="flex flex-col items-center justify-center text-tertiary bg-tertiary/10 rounded-xl px-3 py-1 scale-110 duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+<span class="font-label-caps text-[10px]">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-on-surface transition-all">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-caps text-[10px]">About</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-on-surface transition-all">
+<span class="material-symbols-outlined">play_circle</span>
+<span class="font-label-caps text-[10px]">Sample Works</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1 hover:text-on-surface transition-all">
+<span class="material-symbols-outlined">send</span>
+<span class="font-label-caps text-[10px]">Contact</span>
+</div>
+</div>
+<script>
+        // Micro-interactions and subtle effects
+        document.addEventListener('mousemove', (e) => {
+            const glow = document.querySelector('.blur-\\[120px\\]');
+            if (glow) {
+                const x = (e.clientX / window.innerWidth - 0.5) * 40;
+                const y = (e.clientY / window.innerHeight - 0.5) * 40;
+                glow.style.transform = `translate(${x}px, ${y}px)`;
+            }
+        });
+
+        // Interactive Project Cards
+        const cards = document.querySelectorAll('.group');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const img = card.querySelector('img');
+                if (img) img.style.transform = 'scale(1.08)';
+            });
+            card.addEventListener('mouseleave', () => {
+                const img = card.querySelector('img');
+                if (img) img.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body></html>
